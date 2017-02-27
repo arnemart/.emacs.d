@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: template-tag
+# key: %
+# --
+`(if (equal "erb" web-mode-engine) "<%" "{%")` $1 `(if (equal "erb" web-mode-engine) "%>" "%}")`

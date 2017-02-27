@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Wrap in translation
+# key: t
+# binding: C-s-t
+# --
+<%= t(:${1:`(downcase (replace-regexp-in-string " +" "_" (if yas-selected-text yas-selected-text "")))`}) %>

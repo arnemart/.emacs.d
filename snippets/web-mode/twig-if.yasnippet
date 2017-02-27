@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: twig-if
+# key: %if
+# --
+{% if ${1:contition} %}
+  $2
+${3:\{% else %\}}$4
+{% endif %}

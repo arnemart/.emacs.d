@@ -1,0 +1,7 @@
+# -*- mode: snippet; -*-
+# name: each
+# key: each
+# --
+<% @${1:things}.each do |${1:$(replace-regexp-in-string "s$" "" (car (last (split-string yas-text "\\."))))}| %>
+  ${2:<%= ${1:$(replace-regexp-in-string "s$" "" (car (last (split-string yas-text "\\."))))}.${3:prop} %>}
+<% end %>

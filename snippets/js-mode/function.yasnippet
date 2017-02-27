@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Function
+# key: f
+# --
+function${1: $(if (string= " " yas-text) "" (if (string-match "^ " yas-text) yas-text (concat " " yas-text)))}($2) {$0}`(snippet--function-punctuation)`
