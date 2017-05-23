@@ -27,6 +27,7 @@
      ("Mode" 12 left cycbuf-get-mode-name)
      ("" 2 left "  "))))
  '(cycbuf-buffer-sort-function (quote cycbuf-sort-by-recency))
+ '(cycbuf-clear-delay 10000)
  '(cycbuf-dont-show-regexp (quote ("^ " "^\\*cycbuf\\*$" "SPEEDBAR")))
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(js-indent-level 2)
@@ -38,9 +39,10 @@
  '(neo-window-fixed-size nil)
  '(neo-window-position (quote right))
  '(neo-window-width 35)
+ '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (apache-mode nginx-mode highlight-indentation all-the-icons neotree rainbow-delimiters rainbow-delimiters-mode rainbow-mode reveal-in-osx-finder smartparens rinari hrb-mode enh-ruby-mode magit paredit web-mode tagedit use-package-chords key-chord nodejs-repl skewer-mode json-mode js2-refactor rjsx-mode ag textmate textmate-mode move-text undo-tree fringe-current-line whitespace-cleanup-mode cycbuf expand-region multiple-cursors projectile-speedbar sr-speedbar projectile powerline nyan-mode color-theme-sanityinc-tomorrow-night unicode-fonts auto-indent-mode auto-compile ido-completing-read+ smex dash s use-package ido-vertical-mode flx-ido)))
+    (markdown-mode fish-mode apache-mode nginx-mode highlight-indentation all-the-icons neotree rainbow-delimiters rainbow-delimiters-mode rainbow-mode reveal-in-osx-finder smartparens rinari hrb-mode enh-ruby-mode magit paredit web-mode tagedit use-package-chords key-chord nodejs-repl skewer-mode json-mode js2-refactor rjsx-mode ag textmate textmate-mode move-text undo-tree fringe-current-line whitespace-cleanup-mode cycbuf expand-region multiple-cursors projectile-speedbar sr-speedbar projectile powerline nyan-mode color-theme-sanityinc-tomorrow-night unicode-fonts auto-indent-mode auto-compile ido-completing-read+ smex dash s use-package ido-vertical-mode flx-ido)))
  '(powerline-default-separator (quote wave))
  '(projectile-mode-line
    (quote
