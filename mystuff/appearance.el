@@ -5,7 +5,7 @@
 ;; Window size/position
 (when window-system
   (set-frame-position (selected-frame) 0 0)
-  (set-frame-size (selected-frame) 1000 (x-display-pixel-height) t))
+  (set-frame-size (selected-frame) 1200 (x-display-pixel-height) t))
 
 ;; Color theme
 (use-package color-theme-sanityinc-tomorrow
