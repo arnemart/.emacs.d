@@ -71,3 +71,7 @@
 (require 'setup-ruby-mode)
 
 (require 'setup-css-mode)
+
+(require 'setup-markdown-mode)
+
+(require 'setup-org-mode)
