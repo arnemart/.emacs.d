@@ -4,12 +4,17 @@
 (setq mc/cmds-to-run-for-all
       '(
         copy-to-pasteboard
+        cut-to-clipboard
         end-of-buffer
         indent-new-comment-line
         paredit-forward-delete
         paredit-open-round
         paredit-splice-sexp-killing-backward
         paste-from-pasteboard
+        tagedit-insert-dot
+        tagedit-insert-equal
+        tagedit-insert-lt
+        textmate-select-line
         ))
 
 (setq mc/cmds-to-run-once
@@ -20,9 +25,11 @@
         cycbuf-switch-to-previous-buffer
         describe-key
         eval-expression
+        indent-for-tab-command
         mac-mwheel-scroll
         mark-whole-buffer
         mc-test-fn
+        move-to-window-line-top-bottom
         new-unnamed-buffer
         paste-from-clipboard
         paste-from-pasteboard
