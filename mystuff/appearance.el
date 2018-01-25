@@ -14,6 +14,9 @@
   ;; Dim region highlight color
   (set-face-attribute 'region nil :background "#373b41"))
 
+;; Fix color space
+(setq ns-use-srgb-colorspace nil)
+
 ;; NYAN NAYN
 (use-package nyan-mode
   :ensure t
