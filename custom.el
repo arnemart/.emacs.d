@@ -30,8 +30,19 @@
  '(cycbuf-clear-delay 10000)
  '(cycbuf-dont-show-regexp (quote ("^ " "^\\*cycbuf\\*$" "SPEEDBAR")))
  '(exec-path-from-shell-arguments (quote ("-l")))
+ '(global-undo-tree-mode t)
  '(js-indent-level 2)
+ '(mac-auto-operator-composition-mode t)
+ '(mac-drawing-use-gcd t)
+ '(mac-mouse-wheel-mode nil)
+ '(mac-mouse-wheel-smooth-scroll t)
  '(mac-pass-control-to-system nil)
+ '(mouse-wheel-mode t)
+ '(mouse-wheel-progressive-speed t)
+ '(mouse-wheel-scroll-amount (quote (1 ((shift) . 3))))
+ '(neo-autorefresh t)
+ '(neo-default-system-application "reveal")
+ '(neo-force-change-root t)
  '(neo-show-updir-line nil)
  '(neo-smart-open t)
  '(neo-theme (quote icons))
@@ -42,7 +53,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (markdown-mode fish-mode apache-mode nginx-mode highlight-indentation all-the-icons neotree rainbow-delimiters rainbow-delimiters-mode rainbow-mode reveal-in-osx-finder smartparens rinari hrb-mode enh-ruby-mode magit paredit web-mode tagedit use-package-chords key-chord nodejs-repl skewer-mode json-mode js2-refactor rjsx-mode ag textmate textmate-mode move-text undo-tree fringe-current-line whitespace-cleanup-mode cycbuf expand-region multiple-cursors projectile-speedbar sr-speedbar projectile powerline nyan-mode color-theme-sanityinc-tomorrow-night unicode-fonts auto-indent-mode auto-compile ido-completing-read+ smex dash s use-package ido-vertical-mode flx-ido)))
+    (git-gutter-fringe smooth-scrolling yaml-mode helpful markdown-mode fish-mode apache-mode nginx-mode highlight-indentation all-the-icons neotree rainbow-delimiters rainbow-delimiters-mode rainbow-mode reveal-in-osx-finder smartparens rinari hrb-mode enh-ruby-mode magit paredit web-mode tagedit use-package-chords key-chord nodejs-repl skewer-mode json-mode js2-refactor rjsx-mode ag textmate textmate-mode move-text undo-tree fringe-current-line whitespace-cleanup-mode cycbuf expand-region multiple-cursors projectile-speedbar sr-speedbar projectile powerline nyan-mode color-theme-sanityinc-tomorrow-night unicode-fonts auto-indent-mode auto-compile ido-completing-read+ smex dash s use-package ido-vertical-mode flx-ido)))
  '(powerline-default-separator (quote wave))
  '(projectile-mode-line
    (quote
@@ -57,6 +68,7 @@
  '(speedbar-show-unknown-files t)
  '(sr-speedbar-skip-other-window-p t)
  '(truncate-lines t)
+ '(undo-tree-enable-undo-in-region nil)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-enable-auto-closing t)
