@@ -6,7 +6,9 @@
 
 (defun osx-clipboard-paste-function ()
   ;;(call-process "pbpaste" nil t)
-  (shell-command-to-string "pbpaste"))
+  (s-chop-prefix "setenv: Too many arguments
+"
+                 (shell-command-to-string "pbpaste")))
 
 (setq mc-clipboard-list '())
 
@@ -15,12 +17,13 @@
   (if (and (fboundp 'mc/num-cursors) (> (mc/num-cursors) 1))
       (let ((i 0))
         (mc/for-each-cursor-ordered
-         (save-excursion
-           (mc/restore-state-from-overlay cursor)
-           (if mark-active
-               (delete-region (region-beginning) (region-end)))
-           (insert (nth i (-cycle mc-clipboard-list)))
-           (setq i (+ i 1)))))
+         (mc/restore-state-from-overlay cursor)
+         (if mark-active
+             (delete-region (region-beginning) (region-end)))
+         (insert (if (= 0 (length mc-clipboard-list))
+                     (osx-clipboard-paste-function)
+                   (nth i (-cycle mc-clipboard-list))))
+         (setq i (+ i 1))))
 
     (if mark-active
         (let ((p1 (region-beginning)) (p2 (region-end)))
