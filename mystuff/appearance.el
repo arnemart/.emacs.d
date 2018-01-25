@@ -1,6 +1,5 @@
 ;; Font
-(set-default-font "Fira Code 13")
-(mac-auto-operator-composition-mode)
+(set-default-font "Fira Mono 13")
 
 ;; Window size/position
 (when window-system
@@ -62,9 +61,17 @@
 ;; Fringe
 (use-package fringe-current-line
   :ensure t
+  :init
+  (global-fringe-current-line-mode 1)
   :config
-  (global-fringe-current-line-mode 1))
+  (global-git-gutter-mode))
 
+
+;; Gut gitter
+(use-package git-gutter-fringe
+  :ensure t
+  :config
+  (setq git-gutter-fr:side 'right-fringe))
 
 ;; Unicode fonts
 (use-package unicode-fonts
