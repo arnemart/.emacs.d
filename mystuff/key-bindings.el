@@ -6,8 +6,17 @@
 ;; Change mouse behavior
 (define-key global-map (kbd "<S-down-mouse-1>") 'ignore)
 (define-key global-map (kbd "<S-mouse-1>") 'mouse-save-then-kill)
-(define-key global-map (kbd "<down-mouse-3>") 'mac-mouse-buffer-menu)
+;; (define-key global-map (kbd "<down-mouse-3>") 'mac-mouse-buffer-menu)
+
+(global-set-key (kbd "<wheel-left>") (λ (scroll-right 1)))
+(global-set-key (kbd "<wheel-right>") (λ (when (> (window-hscroll) 0) (scroll-left 1))))
+(global-set-key (kbd "<double-wheel-left>") (λ (scroll-right 2)))
+(global-set-key (kbd "<double-wheel-right>") (λ (scroll-left 2)))
+(global-set-key (kbd "<triple-wheel-left>") (λ (scroll-right 5)))
+(global-set-key (kbd "<triple-wheel-right>") (λ (scroll-left 5)))
+
 (global-unset-key (kbd "M-<down-mouse-1>"))
+
 
 ;; Symbols
 (define-key key-translation-map (kbd "s-8") (kbd "["))
