@@ -61,17 +61,17 @@
 ;; Fringe
 (use-package fringe-current-line
   :ensure t
-  :init
-  (global-fringe-current-line-mode 1)
   :config
-  (global-git-gutter-mode))
+  (global-fringe-current-line-mode 1))
 
 
 ;; Gut gitter
 (use-package git-gutter-fringe
   :ensure t
+  :init
+  (setq git-gutter-fr:side 'right-fringe)
   :config
-  (setq git-gutter-fr:side 'right-fringe))
+  (global-git-gutter-mode))
 
 ;; Unicode fonts
 (use-package unicode-fonts
