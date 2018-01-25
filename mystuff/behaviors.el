@@ -73,7 +73,9 @@
 ;; ffap
 (use-package ffap
   :bind (("C-c f f" . open-file-at-point)
-         ("C-M-s-f" . open-file-at-point)))
+         ("C-M-s-f" . open-file-at-point))
+  :config
+  (require 'ffap))
 
 ;; Keep track of recent files
 (setq recentf-max-saved-items 100)
@@ -149,6 +151,8 @@
 ;; Undo tree
 (use-package undo-tree
   :ensure t
+  :init
+  (global-undo-tree-mode)
   :bind (("M-z" . undo-tree-undo)
          ("M-Z" . undo-tree-redo)
          ("C-M-z" . undo-tree-visualize)))
@@ -176,5 +180,14 @@
 
 ;; Reveal in finder
 (use-package reveal-in-osx-finder :ensure t)
+
+;; Ding
+(defun my-bell-function ()
+  (unless (memq this-command
+                '(isearch-abort abort-recursive-edit exit-minibuffer
+                                keyboard-quit mwheel-scroll down up next-line previous-line
+                                backward-char forward-char))
+    (ding)))
+(setq ring-bell-function 'my-bell-function)
 
 (provide 'behaviors)
