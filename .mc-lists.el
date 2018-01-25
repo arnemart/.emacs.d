@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        comment-or-uncomment-region-or-line
         copy-to-pasteboard
         cut-to-clipboard
         end-of-buffer
@@ -11,10 +12,15 @@
         paredit-open-round
         paredit-splice-sexp-killing-backward
         paste-from-pasteboard
+        tagedit-forward-slurp-tag
         tagedit-insert-dot
         tagedit-insert-equal
+        tagedit-insert-exclamation-mark
+        tagedit-insert-gt
         tagedit-insert-lt
+        tagedit-insert-quote
         textmate-select-line
+        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once
@@ -25,11 +31,14 @@
         cycbuf-switch-to-previous-buffer
         describe-key
         eval-expression
+        ido-find-file
+        ido-switch-buffer
         indent-for-tab-command
         mac-mwheel-scroll
         mark-whole-buffer
         mc-test-fn
         move-to-window-line-top-bottom
+        neotree-project-dir
         new-unnamed-buffer
         paste-from-clipboard
         paste-from-pasteboard
