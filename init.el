@@ -75,3 +75,5 @@
 (require 'setup-markdown-mode)
 
 (require 'setup-org-mode)
+(put 'downcase-region 'disabled nil)
+(put 'scroll-left 'disabled nil)
