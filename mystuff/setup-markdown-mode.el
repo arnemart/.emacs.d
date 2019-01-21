@@ -17,6 +17,8 @@
               ("C-<down>"   . markdown-move-down)
               ("C-<left>"   . markdown-promote)
               ("C-<right>"  . markdown-demote)
-              ("C-<return>" . markdown-insert-list-item)))
+              ("C-<return>" . markdown-insert-list-item))
+  :config
+  (add-hook 'markdown-mode-hook 'visual-line-mode))
 
 (provide 'setup-markdown-mode)

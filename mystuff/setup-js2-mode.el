@@ -1,3 +1,4 @@
+
 (use-package js2-mode
   :ensure t
   :mode "\\.js\\'"
@@ -6,7 +7,7 @@
   (setq-default js2-concat-multiline-strings 'eol)
   (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval"
                                      "clearInterval" "location" "__dirname" "console" "JSON" "window"
-                                     "process"))
+                                     "process" "fetch"))
   (setq-default js2-strict-trailing-comma-warning t)
   (setq-default js2-strict-inconsistent-return-warning nil)
   :bind (:map js2-mode-map
@@ -18,7 +19,10 @@
               ("C-<right>"  . js2r-forward-slurp)
               ("M-m S"      . js2r-split-string))
   :config
-  (use-package rjsx-mode :ensure t)
+  (use-package prettier-js :ensure t)
+  (use-package rjsx-mode :ensure t
+    :mode "\\.jsx\\'"
+    :magic ("import React" . rjsx-mode))
   (use-package js2-refactor :ensure t)
   (use-package json-mode :ensure t)
   (use-package nodejs-repl :ensure t)

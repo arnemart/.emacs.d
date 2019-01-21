@@ -11,6 +11,10 @@
   :mode "\\.twig"
   :mode "\\.html\\.erb"
   :mode "\\.php"
+  :mode "\\.vm"
+  :mode "\\.jsp"
+  :mode "\\.mustache"
+  :mode "\\.tag"
   :bind (:map web-mode-map
               ("M-r" . refresh-chrome)
               ("C-M-<left>" . sgml-skip-tag-backward)
@@ -29,7 +33,8 @@
               ("M-s-." . sgml-close-tag))
   :init
   (setq web-mode-content-types-alist
-        '(("jsx"  . "\\.jsx?\\'")))
+        '(("jsx"  . "\\.jsx?\\'")
+          ("jsp"  . "\\.tag")))
   (setq web-mode-engines-alist
         '(("twig" . "craft/templates/.*\\.html\\'")))
   (add-hook 'web-mode-hook
