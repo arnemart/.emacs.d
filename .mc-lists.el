@@ -6,12 +6,15 @@
         comment-or-uncomment-region-or-line
         copy-to-pasteboard
         cut-to-clipboard
+        cycle-quotes
         end-of-buffer
         indent-new-comment-line
+        js2r-contract-node-at-point
         paredit-forward-delete
         paredit-open-round
         paredit-splice-sexp-killing-backward
         paste-from-pasteboard
+        rjsx-electric-gt
         tagedit-forward-slurp-tag
         tagedit-insert-dot
         tagedit-insert-equal
@@ -20,6 +23,7 @@
         tagedit-insert-lt
         tagedit-insert-quote
         textmate-select-line
+        upcase-region
         yaml-electric-backspace
         ))
 
@@ -37,10 +41,15 @@
         mac-mwheel-scroll
         mark-whole-buffer
         mc-test-fn
+        mouse-set-region
+        mouse-set-secondary
         move-to-window-line-top-bottom
         neotree-project-dir
         new-unnamed-buffer
+        node-js-eval-region-or-buffer
         paste-from-clipboard
         paste-from-pasteboard
         smex
+        tagedit-forward-barf-tag
+        textmate-next-line
         ))
