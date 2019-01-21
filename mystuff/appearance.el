@@ -1,10 +1,13 @@
-;; Font
-(set-default-font "Fira Mono 13")
-
 ;; Window size/position
 (when window-system
-  (set-frame-position (selected-frame) 0 0)
-  (set-frame-size (selected-frame) 1200 (x-display-pixel-height) t))
+  (run-at-time "3 sec" nil (lambda ()
+                             (set-frame-position (selected-frame) 0 0)
+                             (set-frame-size (selected-frame) 1100 (- (x-display-pixel-height) 48) t))))
+
+(setq default-frame-alist '((ns-transparent-titlebar . t) (ns-appearance . 'nil)))
+
+;; Font
+(run-at-time "1 sec" nil 'set-frame-font "Fira Code 13" t)
 
 ;; Color theme
 (use-package color-theme-sanityinc-tomorrow
@@ -12,7 +15,8 @@
   :config
   (color-theme-sanityinc-tomorrow-night)
   ;; Dim region highlight color
-  (set-face-attribute 'region nil :background "#373b41"))
+  (set-face-attribute 'region nil :background "#32363b")
+  (set-face-attribute 'default nil :background "#1e1e1e"))
 
 ;; Fix color space
 (setq ns-use-srgb-colorspace nil)
@@ -86,9 +90,11 @@
 ;; Diminish
 (eval-after-load "visual-line-mode" '(diminish 'global-visual-line-mode))
 (eval-after-load "whitespace" '(diminish 'global-whitespace-mode))
-(eval-after-load "auto-revert" '(diminish 'auto-revert-mode))
+(eval-after-load "autorevert" '(diminish 'auto-revert-mode))
 (eval-after-load "hrb-mode" '(diminish 'hrb-mode))
 (eval-after-load "abbrev" '(diminish 'abbrev-mode))
+(eval-after-load "git-gutter-fringe" '(diminish 'git-gutter-mode))
+(eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
 
 (defmacro rename-modeline (package-name mode new-name)
   `(eval-after-load ,package-name
