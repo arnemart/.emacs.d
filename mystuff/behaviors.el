@@ -34,27 +34,12 @@
   :bind ("M-t" . projectile-find-file))
 
 (projectile-mode)
-(defun neotree-project-dir ()
-  "Open NeoTree using the git root."
-  (interactive)
-  (if (projectile-project-p)
-      (let ((project-dir (projectile-project-root))
-            (file-name (buffer-file-name)))
-        (neotree-toggle)
-        (if project-dir
-            (if (neo-global--window-exists-p)
-                (progn
-                  (neotree-dir project-dir)
-                  (neotree-find file-name)))
-          (message "Could not find git project root.")))
-    (neotree-toggle)))
 
-
-(use-package neotree
+;; .editorconfig
+(use-package editorconfig
   :ensure t
   :config
-  (add-hook 'projectile-after-switch-project-hook 'neotree-projectile-action)
-  :bind (("C-M-s-s" . neotree-project-dir)))
+  (editorconfig-mode 1))
 
 ;; ag
 (use-package ag
@@ -73,9 +58,8 @@
 ;; ffap
 (use-package ffap
   :bind (("C-c f f" . open-file-at-point)
-         ("C-M-s-f" . open-file-at-point))
-  :config
-  (require 'ffap))
+         ("C-M-s-f" . open-file-at-point)))
+(require 'ffap)
 
 ;; Keep track of recent files
 (setq recentf-max-saved-items 100)
@@ -94,8 +78,8 @@
 
 ;; Save place
 (use-package saveplace
-  :init
-  (setq-default save-place t))
+  :config
+  (save-place-mode t))
 
 ;; Smex
 (use-package smex
@@ -111,7 +95,7 @@
 
 ;; Indentation
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 (electric-indent-mode t)
 
 (use-package auto-indent-mode
@@ -172,14 +156,18 @@
   :init
   (require 'snippet-helpers)
   :config
-  (setq yas/root-directory "~/.emacs.d/snippets")
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
   (setq yas-verbosity 1)
-  (yas/load-directory yas/root-directory)
   (yas-global-mode 1))
 
 
 ;; Reveal in finder
 (use-package reveal-in-osx-finder :ensure t)
+
+;; Toggle quotes
+(use-package cycle-quotes
+  :ensure t
+  :bind (("C-M-2" . cycle-quotes)))
 
 ;; Ding
 (defun my-bell-function ()
