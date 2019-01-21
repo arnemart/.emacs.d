@@ -98,6 +98,9 @@
 (global-set-key (kbd "C-x |") 'my-split-vertical)
 (global-set-key (kbd "C-x 3") 'my-split-horizontal)
 (global-set-key (kbd "C-x _") 'my-split-horizontal)
+(global-unset-key (kbd "M-d"))
+(global-set-key (kbd "M-d") 'my-split-vertical)
+(global-set-key (kbd "M-D") 'my-split-horizontal)
 
 ;; Make sure M-v pastes when searching
 (define-key isearch-mode-map (kbd "M-v") (λ
@@ -107,7 +110,6 @@
 
 ;; Buffers/frames
 (global-set-key (kbd "M-n") 'new-unnamed-buffer)
-(global-set-key (kbd "M-N") 'make-frame)
 
 (global-set-key (kbd "M-b") 'ido-switch-buffer)
 (global-set-key (kbd "M-<") 'next-multiframe-window)
