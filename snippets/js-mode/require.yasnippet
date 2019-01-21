@@ -2,4 +2,4 @@
 # name: require
 # key: r
 # --
-var ${2:${1:$(s-lower-camel-case (car (last (s-split "/" yas-text))))}} = require('${1:thing}');
+const ${2:${1:$(s-lower-camel-case (car (last (s-split "/" yas-text))))}} = require('${1:thing}');
