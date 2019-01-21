@@ -20,8 +20,7 @@
       version-control t)
 
 (require 'package)
-(package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 
 (eval-when-compile
@@ -53,16 +52,21 @@
 
 (require 'behaviors)
 
+(require 'setup-neotree)
+
 (require 'copypaste)
 
 (require 'setup-hippie-expand)
 
 (require 'setup-magit)
 
-
 (require 'setup-paredit)
 
 (require 'modes)
+
+(require 'setup-clojure-mode)
+
+(require 'setup-elisp-mode)
 
 (require 'setup-js2-mode)
 
@@ -74,6 +78,9 @@
 
 (require 'setup-markdown-mode)
 
+(require 'setup-java-mode)
+
 (require 'setup-org-mode)
 (put 'downcase-region 'disabled nil)
 (put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)
