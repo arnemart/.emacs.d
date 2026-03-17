@@ -1,0 +1,13 @@
+*~
+**/#*#
+.cache
+straight
+elpa
+tree-sitter
+history
+recentf
+ido.last
+.lsp-session
+tramp
+projects
+projectile-bookmarks.eld
