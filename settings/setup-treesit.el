@@ -66,8 +66,8 @@
               ("C-s-<down>"  . combobulate-splice-down)
               ("C-s-<right>" . combobulate-splice-parent)
               ("C-s-<left>"  . combobulate-splice-self)
-              ("s-<up>"      . combobulate-navigate-previous)
-              ("s-<down>"    . combobulate-navigate-next)
+              ("C-<up>"      . combobulate-navigate-previous)
+              ("C-<down>"    . combobulate-navigate-next)
               ("M-s-<up>"    . combobulate-drag-up)
               ("M-s-<down>"  . combobulate-drag-down))
   :init

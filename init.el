@@ -13,6 +13,7 @@
 (require 'ui)
 (require 'sane-defaults)
 (require 'setup-modeline)
+(require 'setup-multiple-cursors)
 (require 'keys)
 
 (require 'setup-magit)
