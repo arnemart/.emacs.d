@@ -3,6 +3,7 @@
 .cache
 straight
 elpa
+transient
 tree-sitter
 history
 recentf

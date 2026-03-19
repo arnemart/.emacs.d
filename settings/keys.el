@@ -12,6 +12,9 @@
 (define-key key-translation-map (kbd "s-7") (kbd "|"))
 (define-key key-translation-map (kbd "s-/") (kbd "\\"))
 
+(global-set-key (kbd "s-l") (λ (insert "λ")))
+
+;; Disable print key
 (global-unset-key (kbd "s-p"))
 
 (global-set-key (kbd "<escape>") 'keyboard-quit)
@@ -20,7 +23,7 @@
 (global-set-key (kbd "M-w") 'kill-current-buffer)
 
 ;; Cut copy paste
-(global-set-key (kbd "M-X") 'simpleclip-cut)
+(global-set-key (kbd "M-s-x") 'simpleclip-cut)
 (global-set-key (kbd "M-c") 'simpleclip-copy)
 (global-set-key (kbd "M-X") 'simpleclip-cut)
 (global-set-key (kbd "M-v") 'simpleclip-paste)
@@ -42,19 +45,32 @@
 (global-set-key (kbd "s-<backspace>") 'backward-kill-word)
 (global-set-key (kbd "M-<left>") 'back-to-indentation)
 (global-set-key (kbd "M-<right>") 'move-end-of-line)
-(global-set-key (kbd "M-<backspace>") '(lambda () (interactive) (kill-line 0)))
+(global-set-key (kbd "M-<backspace>") (λ (kill-line 0)))
 (global-set-key (kbd "s-<up>") 'backward-paragraph)
 (global-set-key (kbd "s-<down>") 'forward-paragraph)
 (global-set-key (kbd "M-<up>") 'beginning-of-buffer)
+
 (global-set-key (kbd "M-<down>") 'end-of-buffer)
+(global-set-key (kbd "M-<return>") (λ (move-end-of-line 1) (newline)))
+
 (global-set-key (kbd "M-s-<up>") 'move-text-up)
 (global-set-key (kbd "M-s-<down>") 'move-text-down)
 
 ;; Code stuff
 (global-set-key (kbd "M-/") 'comment-line)
+(global-set-key (kbd "C-.") 'completion-at-point)
+(global-set-key (kbd "C-c r t") 'combobulate-cursor-edit-sequence-dwim)
 
-;; Find
-(global-set-key (kbd "M-f") 'swiper)
+;; Find etc
+(global-set-key (kbd "M-f") 'consult-line)
+(global-set-key (kbd "M-e") (λ (consult-line (buffer-substring-no-properties (mark) (point)))))
+(global-set-key (kbd "M-l") 'consult-goto-line)
+(global-set-key (kbd "M-F") 'consult-ripgrep)
+
+;; Cycle buffers
+(global-set-key (kbd "C-<tab>") 'consult-buffer)
+(define-key vertico-map (kbd "C-<tab>") 'vertico-next)
+(define-key vertico-map (kbd "C-S-<tab>") 'vertico-previous)
 
 ;; Treemacs
 (global-set-key (kbd "C-M-s-t") 'treemacs)

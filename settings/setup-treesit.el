@@ -56,11 +56,27 @@
   :config
   (os/setup-install-grammars))
 
-;; (use-package combobulate
-;;   :custom
-;;   (combobulate-key-prefix "C-c o")
-;;   :hook ((prog-mode . combobulate-mode))
-;;   :straight (el-patch :type git :host github :repo "mickeynp/combobulate" :rev :latest))
+(use-package combobulate
+  :custom
+  (combobulate-key-prefix "C-c o")
+  (combobulate-proffer-allow-numeric-selection nil)
+  :hook ((prog-mode . combobulate-mode))
+  :bind (:map combobulate-key-map
+              ("C-s-<up>"    . combobulate-splice-up)
+              ("C-s-<down>"  . combobulate-splice-down)
+              ("C-s-<right>" . combobulate-splice-parent)
+              ("C-s-<left>"  . combobulate-splice-self)
+              ("s-<up>"      . combobulate-navigate-previous)
+              ("s-<down>"    . combobulate-navigate-next)
+              ("M-s-<up>"    . combobulate-drag-up)
+              ("M-s-<down>"  . combobulate-drag-down))
+  :init
+  (unbind-key "M-<up>" combobulate-key-map)
+  (unbind-key "M-<down>" combobulate-key-map)
+  (unbind-key "M-<left>" combobulate-key-map)
+  (unbind-key "M-<right>" combobulate-key-map)
+  (unbind-key "M-e" combobulate-key-map)
+  :straight (combobulate :type git :host github :repo "mickeynp/combobulate" :rev :latest))
 
 ;; Flycheck
 (use-package flycheck
@@ -125,27 +141,27 @@
   (lsp-semantic-tokens-enable nil)      ; Related to highlighting, and we defer to treesitter
   )
 
-  (use-package lsp-completion
-    :no-require
-    :hook ((lsp-mode . lsp-completion-mode)))
+(use-package lsp-completion
+  :no-require
+  :hook ((lsp-mode . lsp-completion-mode)))
 
-  (use-package lsp-ui
-    :straight t
-    :commands
-    (lsp-ui-doc-show
-     lsp-ui-doc-glance)
-    :bind (:map lsp-mode-map
-                ("C-c C-d" . 'lsp-ui-doc-glance))
-    :after (lsp-mode)
-    :config (setq lsp-ui-doc-enable t
-                  lsp-ui-doc-show-with-cursor nil      ; Don't show doc when cursor is over symbol - too distracting
-                  lsp-ui-doc-include-signature t       ; Show signature
-                  lsp-ui-doc-position 'at-point))
+(use-package lsp-ui
+  :straight t
+  :commands
+  (lsp-ui-doc-show
+   lsp-ui-doc-glance)
+  :bind (:map lsp-mode-map
+              ("C-c C-d" . 'lsp-ui-doc-glance))
+  :after (lsp-mode)
+  :config (setq lsp-ui-doc-enable t
+                lsp-ui-doc-show-with-cursor nil      ; Don't show doc when cursor is over symbol - too distracting
+                lsp-ui-doc-include-signature t       ; Show signature
+                lsp-ui-doc-position 'at-point))
 
-  ;; Eslint
-  (use-package lsp-eslint
-    :demand t
-    :after lsp-mode)
+;; Eslint
+(use-package lsp-eslint
+  :demand t
+  :after lsp-mode)
 
 
-  (provide 'setup-treesit)
+(provide 'setup-treesit)

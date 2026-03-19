@@ -1,6 +1,8 @@
 (use-package doom-modeline
   :straight t
-  :init (doom-modeline-mode 1))
+  :init
+  (setq doom-modeline-percent-position nil)
+  (doom-modeline-mode 1))
 
 (use-package nyan-mode
   :straight t

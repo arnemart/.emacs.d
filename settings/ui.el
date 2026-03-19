@@ -1,13 +1,20 @@
 ;; Theme
-
 (use-package alabaster-themes
   :straight t
-  :config (load-theme 'alabaster-themes-dark))
+  :config
+  (load-theme 'alabaster-themes-light-bg))
 
 (use-package solaire-mode
   :straight t
   :config
   (solaire-global-mode t))
+
+
+(use-package ns-auto-titlebar
+  :straight t
+  :config
+  (when (eq system-type 'darwin) (ns-auto-titlebar-mode)))
+
 
 ;; Font
 (add-to-list 'default-frame-alist
@@ -32,12 +39,18 @@
   :init
   (vertico-mode))
 
+(use-package savehist
+  :straight t
+  :init
+  (savehist-mode))
+
 (use-package orderless
   :straight t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles partial-completion))))
-  (completion-category-defaults nil))
+  (completion-category-defaults nil)
+  (orderless-matching-styles '(orderless-literal orderless-initialism orderless-flex)))
 
 (use-package corfu
   :straight t
@@ -48,20 +61,16 @@
   (corfu-auto-delay 0)
   (corfu-popupinfo-delay '(0.5 . 0.2))
   (corfu-preview-current 'insert)
-  (corfu-preselect 'prompt)
+  (corfu-preselect 'first)
   (corfu-on-exact-match nil)
-  :bind (:map corfu-map
-              ("M-SPC"      . corfu-insert-separator)
-              ("TAB"        . corfu-next)
-              ([tab]        . corfu-next)
-              ("S-TAB"      . corfu-previous)
-              ([backtab]    . corfu-previous)
-              ("S-<return>" . corfu-insert)
-              ("RET"        . corfu-insert))
   :init
   (global-corfu-mode)
   (corfu-history-mode)
   (corfu-popupinfo-mode))
+
+;; Nice search and stuff
+(use-package consult
+  :straight t)
 
 ;; Nice icons
 (use-package nerd-icons
@@ -75,11 +84,16 @@
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-;; Cycle buffers
-(use-package cycbuf
+;; Minibuffer marginalia
+(use-package marginalia
   :straight t
-  :bind (("C-<tab>"   . cycbuf-switch-to-next-buffer)
-         ("C-S-<tab>" . cycbuf-switch-to-previous-buffer)
-         ))
+  :init (marginalia-mode))
+
+;; Backward forward
+(use-package backward-forward
+  :straight t
+  :bind (("M-s-," . backward-forward-previous-location)
+         ("M-s-." . backward-forward-next-location))
+  :init (backward-forward-mode t))
 
 (provide 'ui)

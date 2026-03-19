@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(sanityinc-tomorrow-night))
  '(custom-safe-themes
-   '("6fc9e40b4375d9d8d0d9521505849ab4d04220ed470db0b78b700230da0a86c1"
+   '("cfb7eb64a2b22d262bfc016743effd3efdd9a747cf5b332805765c87fc99de06"
+     "6fc9e40b4375d9d8d0d9521505849ab4d04220ed470db0b78b700230da0a86c1"
      "c99bd5c62008a38af64a198d1b511509895c83ac45bb90ea8fed82f0e906ecd1"
      "1f82b7df8a4ce0e2ba3b0217d2c552b2fe5b5dd1244481cb65bef733f9818c63"
      "01f6946488b7d6f6857e58b2372527b7bd1b63910f38123e72cf00e4c9651895"
@@ -21,16 +22,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cycbuf-current-face ((t (:background "#5a5b5a" :weight bold))))
- '(cycbuf-header-face ((t (:foreground "#5a5b5a" :weight bold))))
- '(cycbuf-uniquify-face ((t (:foreground "#5a5b5a"))))
- '(font-lock-comment-delimiter-face ((t (:foreground "white"))))
- '(font-lock-comment-face ((t (:foreground "white"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "#8AB1F0"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#95CB82"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#CD974B"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#DFDF8E"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#CC8BC9"))))
  '(treemacs-fringe-indicator-face ((t (:foreground "white"))))
  '(treemacs-nerd-icons-file-face ((t (:inherit nerd-icons-white))))
  '(treemacs-nerd-icons-root-face ((t (:inherit nerd-icons-white))))

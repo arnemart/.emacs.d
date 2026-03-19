@@ -7,6 +7,8 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+(load (expand-file-name "defuns.el" user-emacs-directory))
+
 (require 'straight-bootstrap)
 (require 'ui)
 (require 'sane-defaults)

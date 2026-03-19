@@ -1,6 +1,6 @@
 (setq package-enable-at-startup nil)
 (setq default-frame-alist
-      '((height . 70)
+      '((height . 65)
         (width . 170)
         (left . 20)
         (top . 30)
