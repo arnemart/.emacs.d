@@ -3,12 +3,17 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        
+        combobulate-mark-node-dwim
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        beginning-of-buffer
+        corfu-quit
+        describe-key
+        ignore
+        ignore-preserving-kill-region
         lsp-ui-doc--handle-mouse-movement
         ultra-scroll
-        ignore-preserving-kill-region
+        xref-find-definitions
         ))

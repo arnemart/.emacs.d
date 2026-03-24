@@ -22,3 +22,5 @@
 
 (require 'setup-treesit)
 (require 'setup-prettier)
+
+(require 'setup-server)

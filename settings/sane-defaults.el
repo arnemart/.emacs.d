@@ -1,3 +1,7 @@
+;; Dash
+(use-package dash
+  :straight t)
+
 ;; Dont wanna use kill ring
 (use-package simpleclip
   :straight t
@@ -10,12 +14,37 @@
   :config
   (global-undo-tree-mode))
 
-;; ultra-scroll
+;; scroll stuff
+
 (use-package ultra-scroll
   :straight t
   :config
   (ultra-scroll-mode 1))
 
+;; (pixel-scroll-mode t)
+
+;; (use-package scroll-restore
+;;   :straight t
+;;   :custom
+;;   (scroll-restore-cursor-type 'hollow)
+;;   (scroll-restore-handle-cursor 'type)
+;;   (scroll-restore-handle-region t)
+;;   (scroll-restore-jump-back t)
+;;   :config
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll--hide-cursor)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll--hide-cursor-undo)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll-up)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll-down)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll--prepare-to-scroll)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll--end-scroll)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll--scroll)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll)
+;;   ;; (add-to-list 'scroll-restore-commands 'ultra-scroll-mac)
+;;   (add-to-list 'scroll-restore-commands 'pixel-scroll-up)
+;;   (add-to-list 'scroll-restore-commands 'pixel-scroll-down)
+;;   (scroll-restore-mode t))
+
+;; Move text
 (use-package move-text
   :straight t)
 

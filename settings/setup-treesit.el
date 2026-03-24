@@ -139,7 +139,10 @@
   (lsp-lens-enable nil)                 ; Optional, I don't need it
   ;; semantic
   (lsp-semantic-tokens-enable nil)      ; Related to highlighting, and we defer to treesitter
-  )
+  :bind
+  (:map lsp-mode-map
+        ("C-c r r" . 'lsp-execute-code-action)
+        ("C-c r n" . 'lsp-rename)))
 
 (use-package lsp-completion
   :no-require
@@ -156,12 +159,15 @@
   :config (setq lsp-ui-doc-enable t
                 lsp-ui-doc-show-with-cursor nil      ; Don't show doc when cursor is over symbol - too distracting
                 lsp-ui-doc-include-signature t       ; Show signature
-                lsp-ui-doc-position 'at-point))
+                lsp-ui-doc-position 'at-point
+                lsp-ui-doc-delay 1))
 
 ;; Eslint
 (use-package lsp-eslint
   :demand t
-  :after lsp-mode)
+  :after lsp-mode
+  :config
+  (setq lsp-eslint-server-command `("node" "/Users/arnemart/.vscode/extensions/dbaeumer.vscode-eslint-3.0.24/server/out/eslintServer.js" "--stdio")))
 
 
 (provide 'setup-treesit)
